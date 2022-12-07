@@ -2,39 +2,31 @@ public class RaceUtilityRunner
 {
     public static void main(String[] args)
     {
-        double miles1 = 13.85;
-        double km1 = 40;
-        System.out.println(RaceUtility.milesToKm(miles1));
-        System.out.println(RaceUtility.kmToMiles(km1));
+        System.out.println(distanceConverter(13.85,40));
 
-        double miles2 = 26.42;
-        double km2 = 3.5;
-        System.out.println(RaceUtility.milesToKm(miles2));
-        System.out.println(RaceUtility.kmToMiles(km2));
+        System.out.println(distanceConverter(26.42,3.5));
 
-        double miles3 = 5;
-        double km3 = 20.50;
-        System.out.println(RaceUtility.milesToKm(miles3));
-        System.out.println(RaceUtility.kmToMiles(km3));
+        System.out.println(distanceConverter(5,20.5));
 
-        double miles4 = 0;
-        double km4 = 0;
-        System.out.println(RaceUtility.milesToKm(miles4));
-        System.out.println(RaceUtility.kmToMiles(km4));
+        System.out.println(distanceConverter(0,0));
 
-        String title = "welcome to the marathon!";
-        System.out.println(RaceUtility.makeProper(title));
 
-        title = "It's TIME for THE 5k!";
-        System.out.println(RaceUtility.makeProper(title));
+        System.out.println(formatStr("welcome to the marathon!"));
 
-        title = "runners, take your marks...";
-        System.out.println(RaceUtility.makeProper(title));
+        System.out.println(formatStr("It's TIME for THE 5k!"));
 
-        title = "2 MILES TO GO!";
-        System.out.println(RaceUtility.makeProper(title));
+        System.out.println(formatStr("runners, take your marks..."));
 
-        title = "water break in 0.5 miles";
-        System.out.println(RaceUtility.makeProper(title));
+        System.out.println(formatStr("2 MILES TO GO!"));
+
+        System.out.println(formatStr("water break in 0.5 miles"));
+    }
+
+    public static String distanceConverter(double mi, double km) {
+        return RaceUtility.milesToKm(mi) + "\n" + RaceUtility.kmToMiles(km);
+    }
+
+    public static String formatStr(String msg) {
+        return RaceUtility.makeProper(msg);
     }
 }
